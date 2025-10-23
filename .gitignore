@@ -1,0 +1,64 @@
+﻿# Build
+bin/
+obj/
+artifacts/
+publish/
+
+# Visual Studio / IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+packages/
+*.nupkg
+
+# Logs & debug
+*.log
+*.pdb
+*.cache
+
+# Databases
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Secrets & env
+.env
+.env.*
+secrets.json
+appsettings.*.Local
+appsettings.*.Secret
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+node_modules/
+
+# Test results / coverage
+coverage/
+*.coverage
+
+# JetBrains
+*.DotSettings.user
+
+# Docker
+docker-compose.override.yml
+
+# Others
+*.bak
+*.backup
+
+# Ignore user-specific VS Code settings but keep workspace settings if desired
+.vscode/settings.json

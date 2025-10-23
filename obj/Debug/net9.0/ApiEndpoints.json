@@ -1,0 +1,113 @@
+[
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "InventorySystem_webapi.Controllers.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "GetProductsByCategory",
+    "RelativePath": "api/Inventory/categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "GetAllProducts",
+    "RelativePath": "api/Inventory/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "GetProductByCode",
+    "RelativePath": "api/Inventory/products/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Inventory/products/{code}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedProduct",
+        "Type": "InventorySystem_webapi.DTOs.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/Inventory/products/{code}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "InventorySystem_webapi.Controllers.InventoryController",
+    "Method": "AddProduct",
+    "RelativePath": "api/Inventory/products/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "InventorySystem_webapi.DTOs.ProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
