@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\InventorySystem-webapi\\InventorySystem-webapi.csproj": {}
+    "/media/juanma/Dev/InventorySystem-webapi/InventorySystem-webapi.csproj": {}
   },
   "projects": {
-    "D:\\InventorySystem-webapi\\InventorySystem-webapi.csproj": {
+    "/media/juanma/Dev/InventorySystem-webapi/InventorySystem-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\InventorySystem-webapi\\InventorySystem-webapi.csproj",
+        "projectUniqueName": "/media/juanma/Dev/InventorySystem-webapi/InventorySystem-webapi.csproj",
         "projectName": "InventorySystem-webapi",
-        "projectPath": "D:\\InventorySystem-webapi\\InventorySystem-webapi.csproj",
-        "packagesPath": "C:\\Users\\juanma\\.nuget\\packages\\",
-        "outputPath": "D:\\InventorySystem-webapi\\obj\\",
+        "projectPath": "/media/juanma/Dev/InventorySystem-webapi/InventorySystem-webapi.csproj",
+        "packagesPath": "/home/juanma/.nuget/packages/",
+        "outputPath": "/media/juanma/Dev/InventorySystem-webapi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\juanma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/juanma/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/juanma/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
