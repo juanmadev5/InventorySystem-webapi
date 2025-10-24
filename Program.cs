@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using dotenv.net;
 using InventorySystem_webapi.Constants;
 using InventorySystem_webapi.Data;
@@ -6,7 +6,6 @@ using InventorySystem_webapi.domain.@interface;
 using InventorySystem_webapi.domain.repository;
 using InventorySystem_webapi.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 
 DotEnv.Load();
 
@@ -18,7 +17,7 @@ builder.Services.AddCors(options =>
 });
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
+var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);
 
 builder
     .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -27,21 +26,41 @@ builder
         AppExtensions.SetJwtOptions(options, jwtSettings, key);
     });
 
-AppDatabaseConfig.ConfigureDatabase(builder.Services, builder.Environment, builder.Configuration);
+AppDatabaseConfig.ConfigureDatabase(
+    builder.Services,
+    builder.Environment,
+    builder.Configuration["INVENTORY_DB_CONNECTION"]
+);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+if (args.Length == 1 && args[0].Equals("--migrate", StringComparison.OrdinalIgnoreCase))
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
-    if (dbContext.Database.IsRelational())
+    Console.WriteLine("Ejecutando proceso de migración forzada...");
+
+    using (var scope = app.Services.CreateScope())
     {
-        dbContext.Database.Migrate();
+        AutoMigration.ApplyMigrations(scope);
+        Console.WriteLine("Migraciones de base de datos aplicadas con éxito.");
     }
+
+    return;
 }
+
+if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
+{
+    using var scope = app.Services.CreateScope();
+    AutoMigration.ApplyMigrations(scope);
+    Console.WriteLine("Migraciones automáticas aplicadas en desarrollo/staging.");
+}
+else
+{
+    Console.WriteLine("Entorno de Producción: Las migraciones se ejecutan mediante el entrypoint.sh.");
+}
+
 
 app.UseCors(AppPolicy.apiPolicy);
 

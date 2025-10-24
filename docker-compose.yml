@@ -1,0 +1,43 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: inventory-api
+    
+    depends_on:
+      db:
+        condition: service_healthy
+        
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - inventory-net
+
+  db:
+    image: mysql:8.0 
+    container_name: inventory-db
+    env_file:
+      - .env
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      - inventory-net
+    
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "$$MYSQL_USER", "-p$$MYSQL_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+
+networks:
+  inventory-net:
