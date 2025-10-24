@@ -1,5 +1,5 @@
 @InventorySystem_webapi_HostAddress = http://localhost:5073
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJJbnZlbnRvcnlTeXN0ZW1DbGllbnQiLCJpc3MiOiJJbnZlbnRvcnlTeXN0ZW0iLCJleHAiOjE3NjEyMzExMDMsInN1YiI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwianRpIjoiMWI2ODYzYTgtZjM4Yy00YmUyLWI0NDQtYTc1NzhlZjNlZWE2IiwiaWF0IjoxNzYxMjI3NTAzLCJuYmYiOjE3NjEyMjc1MDN9.bl43jFSx4i7tqEML2ViAcSB1E4IPiSIjEr42zNmlBko
+@token = 
 
 ### 🔐 Login (obtener JWT)
 POST {{InventorySystem_webapi_HostAddress}}/api/auth/login

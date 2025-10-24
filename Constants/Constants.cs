@@ -1,4 +1,5 @@
-﻿namespace InventorySystem_webapi.Constants {
+﻿namespace InventorySystem_webapi.Constants
+{
     public static class InventoryMessages
     {
         // Mensajes de error para GetProductByCode
@@ -12,9 +13,17 @@
         public const string ProductWithCodeNotFoundFormat = "Product with code '{0}' not found.";
 
         // Mensaje de éxito para UpdateProduct
-        public const string ProductUpdatedSuccessfullyFormat = "Product '{0}' updated successfully.";
-        
+        public const string ProductUpdatedSuccessfullyFormat =
+            "Product '{0}' updated successfully.";
+
         // Mensaje de éxito para DeleteProduct
-        public const string ProductDeletedSuccessfullyFormat = "Product '{0}' deleted successfully.";
+        public const string ProductDeletedSuccessfullyFormat =
+            "Product '{0}' deleted successfully.";
+    }
+
+    public static class AppPolicy
+    {
+        // CORS Policy name
+        public const string apiPolicy = "AllowAll";
     }
 }
